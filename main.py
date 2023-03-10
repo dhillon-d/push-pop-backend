@@ -1,12 +1,25 @@
 from fastapi import FastAPI
 import uvicorn
+from pydantic import BaseModel
 
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+class Input(BaseModel):
+    value: str
+
+
+stack = []
+
+
+@app.post("/push")
+async def push(inputValue: Input):
+    stack.append(inputValue.value)
+
+
+@app.get("/pop")
+async def pop():
+    return {"value": stack.pop()}
 
 
 if __name__ == "__main__":
