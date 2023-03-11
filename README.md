@@ -1,6 +1,6 @@
 **Design**
 
-This app is the backend in memory database accessible by REST API endpoint. There is also a companion frontend application. Both applications have to be running in order to work locally.
+This app is the backend in memory database accessible by REST API endpoint. You can either run this application by itself, or run it with the companion frontend application.
 
 **Versions**
 
